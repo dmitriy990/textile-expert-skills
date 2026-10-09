@@ -1,0 +1,19 @@
+{
+  "name": "textile-expert",
+  "version": "1.0.0",
+  "description": "Textile and textile-business expert for Ukrainian online stores: fabrics, suppliers, landed cost, QC, legal notes, content and SEO.",
+  "author": {
+    "name": "IvaTech"
+  },
+  "homepage": "https://github.com/dmitriy990/textile-expert-skills",
+  "repository": "https://github.com/dmitriy990/textile-expert-skills",
+  "license": "MIT",
+  "keywords": [
+    "textile",
+    "ecommerce",
+    "ukraine",
+    "import",
+    "landed-cost",
+    "seo"
+  ]
+}

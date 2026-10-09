@@ -1,0 +1,9 @@
+{
+  "_comment": "Налаштування хуків textile-expert. Хуки читають цей файл при кожному запуску. Проектні перевизначення: <проект>/.claude/textile-expert.json (ті самі ключі). confidential_terms — назви постачальників, внутрішні коди тощо: їхня поява у публічному тексті блокується.",
+  "min_gross_margin_pct": 20,
+  "price_outlier_ratio": 30,
+  "lint_block_on_error": true,
+  "stop_check_enabled": true,
+  "legal_as_of": "08.10.2026",
+  "confidential_terms": []
+}

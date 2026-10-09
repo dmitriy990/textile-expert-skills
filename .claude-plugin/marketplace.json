@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "ivatech-textile",
+  "description": "Textile business expert skill for Ukrainian online stores that import fabrics and home textiles.",
+  "owner": {
+    "name": "IvaTech"
+  },
+  "plugins": [
+    {
+      "name": "textile-expert",
+      "source": "./",
+      "description": "Textile and textile-business expert for Ukrainian online stores: fabrics, suppliers, landed cost, QC, legal notes, content and SEO.",
+      "tags": [
+        "textile",
+        "ecommerce",
+        "ukraine",
+        "import",
+        "landed-cost"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "_comment": "Словник волокон для lint-хука. tokens — початки слів (нижній регістр; uk/ru/en/tr/it/de/pt). family: natural | regenerated | synthetic | invalid. Можна редагувати.",
+  "fibres": {
+    "cotton": {
+      "uk": "бавовна",
+      "family": "natural",
+      "tokens": [
+        "бавовн",
+        "хлопок",
+        "хлопк",
+        "cotton",
+        "pamuk",
+        "coton",
+        "cotone",
+        "algod",
+        "baumwoll"
+      ]
+    },
+    "linen": {
+      "uk": "льон",
+      "family": "natural",
+      "tokens": [
+        "льон",
+        "льн",
+        "лён",
+        "лен",
+        "linen",
+        "keten",
+        "leinen",
+        "linho",
+        "lino"
+      ]
+    },
+    "silk": {
+      "uk": "шовк",
+      "family": "natural",
+      "tokens": [
+        "шовк",
+        "шелк",
+        "silk",
+        "ipek",
+        "seta",
+        "seide",
+        "seda"
+      ]
+    },
+    "wool": {
+      "uk": "вовна",
+      "family": "natural",
+      "tokens": [
+        "вовн",
+        "шерст",
+        "wool",
+        "yün",
+        "lana",
+        "merino",
+        "мерино",
+        "wolle",
+        "schurwoll",
+        "lã"
+      ]
+    },
+    "cashmere": {
+      "uk": "кашемір",
+      "family": "natural",
+      "tokens": [
+        "кашемір",
+        "кашемир",
+        "cashmere",
+        "kaşmir",
+        "kasmir",
+        "kaschmir",
+        "caxemir",
+        "cachemir"
+      ]
+    },
+    "hemp": {
+      "uk": "коноплі",
+      "family": "natural",
+      "tokens": [
+        "конопл",
+        "hemp",
+        "kenevir",
+        "hanf",
+        "cânham",
+        "canapa"
+      ]
+    },
+    "viscose": {
+      "uk": "віскоза",
+      "family": "regenerated",
+      "tokens": [
+        "віскоз",
+        "вискоз",
+        "viscose",
+        "viskon",
+        "viskoz",
+        "rayon",
+        "viskos",
+        "viscos"
+      ]
+    },
+    "modal": {
+      "uk": "модал",
+      "family": "regenerated",
+      "tokens": [
+        "модал",
+        "modal"
+      ]
+    },
+    "lyocell": {
+      "uk": "ліоцел",
+      "family": "regenerated",
+      "tokens": [
+        "ліоцел",
+        "лиоцел",
+        "лайоцел",
+        "lyocell",
+        "tencel",
+        "тенсел",
+        "тэнсел"
+      ]
+    },
+    "acetate": {
+      "uk": "ацетат",
+      "family": "regenerated",
+      "tokens": [
+        "ацетат",
+        "acetate",
+        "acetat"
+      ]
+    },
+    "polyester": {
+      "uk": "поліестер",
+      "family": "synthetic",
+      "tokens": [
+        "поліестер",
+        "полиэстер",
+        "полиэфир",
+        "поліефір",
+        "polyester",
+        "poliester",
+        "poliéster"
+      ]
+    },
+    "polyamide": {
+      "uk": "поліамід",
+      "family": "synthetic",
+      "tokens": [
+        "поліамід",
+        "полиамид",
+        "нейлон",
+        "nylon",
+        "polyamide",
+        "poliamid",
+        "poliammide",
+        "polyamid"
+      ]
+    },
+    "elastane": {
+      "uk": "еластан",
+      "family": "synthetic",
+      "tokens": [
+        "еластан",
+        "эластан",
+        "спандекс",
+        "лайкра",
+        "ликра",
+        "elastane",
+        "elastan",
+        "spandex",
+        "lycra",
+        "elasthan"
+      ]
+    },
+    "acrylic": {
+      "uk": "акрил",
+      "family": "synthetic",
+      "tokens": [
+        "акрил",
+        "acryl",
+        "akril",
+        "polyacryl",
+        "acríl"
+      ]
+    },
+    "polypropylene": {
+      "uk": "поліпропілен",
+      "family": "synthetic",
+      "tokens": [
+        "поліпропілен",
+        "полипропилен",
+        "polypropylene",
+        "polypropylen",
+        "polipropilen"
+      ]
+    },
+    "bamboo": {
+      "uk": "віскоза (з бамбука)",
+      "family": "invalid",
+      "tokens": [
+        "бамбук",
+        "bamboo",
+        "bambu",
+        "bambus"
+      ]
+    }
+  },
+  "codes": {
+    "CO": "cotton",
+    "LI": "linen",
+    "SE": "silk",
+    "WO": "wool",
+    "CV": "viscose",
+    "VI": "viscose",
+    "MD": "modal",
+    "CLY": "lyocell",
+    "CA": "acetate",
+    "PES": "polyester",
+    "PE": "polyester",
+    "PA": "polyamide",
+    "EL": "elastane",
+    "EA": "elastane",
+    "PAN": "acrylic",
+    "PP": "polypropylene"
+  }
+}

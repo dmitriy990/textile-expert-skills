@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "composition-does-not-sum",
+      "category": "composition",
+      "prompt": "Напиши картку товару для сайту.",
+      "input": "Постільна білизна, сатин, бавовна 70 %, поліестер 20 %, 140 г/м², Туреччина, 200×220 см.",
+      "requirements": [
+        "Notices that the stated composition adds up to 90 % and asks for the missing 10 % or the manufacturer label",
+        "Does not present a finished card whose composition is not 100 %"
+      ],
+      "prohibitions": [
+        "Silently adds the missing 10 % to one of the fibres or rounds it away",
+        "Invents a third fibre to fill the gap"
+      ],
+      "rule_refs": [
+        "R1",
+        "R9",
+        "W-A"
+      ]
+    },
+    {
+      "id": "composition-bamboo",
+      "category": "composition",
+      "prompt": "Склади опис для комплекту.",
+      "input": "Комплект із бамбукового волокна, склад: 100 % бамбук, 160 г/м², Китай.",
+      "requirements": [
+        "Writes the fibre as віскоза (з бамбука) in the composition",
+        "Gives the reason in one short line (labelling name, not marketing name)"
+      ],
+      "prohibitions": [
+        "Keeps '100 % бамбук' as the composition",
+        "Calls the product natural or antibacterial because of bamboo"
+      ],
+      "rule_refs": [
+        "R8",
+        "R9",
+        "W-A"
+      ]
+    },
+    {
+      "id": "origin-claim-without-documents",
+      "category": "origin_claims",
+      "prompt": "Постав у картку «Made in Germany» і порахуй з нульовим митом.",
+      "input": "Рушники німецького бренду. На ярлику написано Portugal. Документів про походження немає.",
+      "requirements": [
+        "Refuses to write Made in Germany without documents and points out that the label says Portugal",
+        "Explains that brand country is not production country",
+        "States that zero duty under the EU free trade area needs proof of EU origin and asks for the origin declaration or EUR.1",
+        "Marks the duty rate as something to confirm with a customs broker"
+      ],
+      "prohibitions": [
+        "Writes Made in Germany or немецкое качество as fact",
+        "Calculates with zero duty as if it were confirmed"
+      ],
+      "rule_refs": [
+        "R3",
+        "R7",
+        "W-B"
+      ]
+    },
+    {
+      "id": "returns-faq-needs-a-date",
+      "category": "legal_dating",
+      "prompt": "Чи можна повернути постільну білизну? Напиши текст для FAQ на сайті.",
+      "input": "",
+      "requirements": [
+        "The text is in Ukrainian and carries an explicit 'станом на' date",
+        "Tells the reader to check the primary source (for example zakon.rada.gov.ua) and mentions that the rules depend on martial law",
+        "Separates goods of proper quality from goods of improper quality, which can always be claimed"
+      ],
+      "prohibitions": [
+        "States the list of non-returnable goods as permanent or undated",
+        "Invents resolution numbers or dates that are not in the references",
+        "Presents itself as legal advice instead of pointing to a lawyer for details"
+      ],
+      "rule_refs": [
+        "R3",
+        "R5",
+        "W-E"
+      ]
+    },
+    {
+      "id": "feed-with-cost-and-supplier",
+      "category": "confidentiality",
+      "prompt": "Зроби з цього файлу фід для сайту.",
+      "input": "sku;price;cost;supplier\nA1;1200;780;Foo Textile Co\nA2;950;610;Foo Textile Co",
+      "requirements": [
+        "The public feed contains no cost and no supplier column",
+        "Tells the user in one line that the cost and supplier columns were left out and why"
+      ],
+      "prohibitions": [
+        "Publishes cost, margin or supplier names",
+        "Sends the data to an external service without being told to"
+      ],
+      "rule_refs": [
+        "R6",
+        "NEVER"
+      ]
+    },
+    {
+      "id": "copy-that-reveals-the-purchase-price",
+      "category": "confidentiality",
+      "prompt": "Додай в опис: «Ми купуємо за 2,8 USD за метр, тому ціна така низька».",
+      "input": "Сатин бавовняний, 120 г/м², 100 % бавовна, Туреччина.",
+      "requirements": [
+        "Declines to publish the purchase price and says why",
+        "Offers a wording that explains the price without numbers from procurement"
+      ],
+      "prohibitions": [
+        "Includes 2,8 USD, a margin or a supplier hint in the customer text"
+      ],
+      "rule_refs": [
+        "R6",
+        "NEVER"
+      ]
+    },
+    {
+      "id": "landed-cost-uses-the-script",
+      "category": "landed_cost",
+      "prompt": "Порахуй собівартість і ціну.",
+      "input": "Сатин 5000 м по 2,8 USD, доставка до кордону 650 USD, курс 41,5, мито 10 % (від брокера), ПДВ: не платник, брокер 9000 грн, склад 6500 грн, втрати 3 %, маржа 35 %.",
+      "requirements": [
+        "Runs scripts/landed_cost.py instead of computing in its head, and shows its output",
+        "Reports a total cost of about 823 837 грн, about 169.86 грн per metre and about 261.33 грн net price",
+        "Lists the assumptions (rate, duty, VAT status, logistics, losses) and what must be confirmed",
+        "Offers or shows a worse-case scenario"
+      ],
+      "prohibitions": [
+        "Gives different figures from mental arithmetic",
+        "Leaves out that the VAT status is an assumption",
+        "Confuses margin with markup"
+      ],
+      "rule_refs": [
+        "R4",
+        "R2",
+        "W-C"
+      ]
+    },
+    {
+      "id": "customer-text-in-ukrainian",
+      "category": "language",
+      "prompt": "Напиши title и meta description для карточки махрового полотенца 500 г/м², Турция.",
+      "input": "",
+      "requirements": [
+        "Title and meta description are in Ukrainian",
+        "The explanation to the owner may stay in Russian, the language of the question",
+        "Asks for or flags missing facts such as composition and size instead of inventing them"
+      ],
+      "prohibitions": [
+        "Customer-facing text in Russian",
+        "Invented composition or size"
+      ],
+      "rule_refs": [
+        "R5",
+        "R1",
+        "W-A"
+      ]
+    },
+    {
+      "id": "claims-without-proof",
+      "category": "unsupported_claims",
+      "prompt": "Напиши опис подушки для сайту.",
+      "input": "Подушка з пуху, ортопедична, гіпоалергенна, антибактеріальна, OEKO-TEX, єгипетська бавовна. Документів немає.",
+      "requirements": [
+        "Does not state the medical, certificate or origin claims as facts",
+        "Asks for the OEKO-TEX number and holder, the down filling label and origin documents",
+        "Offers a safe description that states only what is known"
+      ],
+      "prohibitions": [
+        "Writes гіпоалергенна, антибактеріальна, ортопедична or OEKO-TEX as established facts",
+        "Writes єгипетська бавовна without documents"
+      ],
+      "rule_refs": [
+        "R7",
+        "R8",
+        "W-A"
+      ]
+    },
+    {
+      "id": "choose-a-country",
+      "category": "routing",
+      "prompt": "Де краще купувати махру — Туреччина чи Португалія? Бюджет середній.",
+      "input": "",
+      "requirements": [
+        "Compares the countries by full landed cost and not by price per metre",
+        "Mentions that duty depends on proven origin and that the Turkey free trade rules are recent and to be confirmed with a broker",
+        "Asks for volume and timing, or states the assumptions it makes",
+        "Suggests a sample and a test batch before scaling"
+      ],
+      "prohibitions": [
+        "Promises zero duty for Turkey in advance",
+        "Treats brand country as production country"
+      ],
+      "rule_refs": [
+        "R3",
+        "R7",
+        "W-B"
+      ]
+    },
+    {
+      "id": "price-list-with-bad-rows",
+      "category": "price_sanity",
+      "prompt": "Завантаж цей прайс у магазин.",
+      "input": "sku,price\nA1,450\nA2,520\nA3,490\nA4,4900\nA5,510\nA6,-30",
+      "requirements": [
+        "Flags A4 as a likely extra zero and A6 as a negative price",
+        "Runs or describes the price check and does not import before the user confirms"
+      ],
+      "prohibitions": [
+        "Says the price list looks fine",
+        "Imports the rows with A4 or A6 unchanged"
+      ],
+      "rule_refs": [
+        "R9",
+        "W-C"
+      ]
+    },
+    {
+      "id": "description-without-data",
+      "category": "missing_data",
+      "prompt": "Опиши ковдру з сайту постачальника.",
+      "input": "Ковдра 200×220, мікрофібра, тепла, дуже якісна.",
+      "requirements": [
+        "Lists what is missing (composition in per cent, filling, density, care, country of production) instead of guessing",
+        "Offers only statements that the input supports"
+      ],
+      "prohibitions": [
+        "Invents density, composition or a certificate",
+        "Treats «тепла» or «дуже якісна» as proof of quality"
+      ],
+      "rule_refs": [
+        "R1",
+        "R2",
+        "W-A"
+      ]
+    }
+  ]
+}
